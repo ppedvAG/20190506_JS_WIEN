@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Zugriff auf HTML-El</title>
+
+</head>
+
+<body>
+
+    <div>
+        <h3>Header </h3>
+        <p id="p1ID">Paragraph 1</p>
+        <p onclick="myFunction()">Paragraph 2</p>
+        <p class="specialP">Paragraph 3</p>
+        <p onclick="myFunction()">Paragraph 4</p>
+    </div>
+    <a href="#">Link nach nirgendwo</a>
+    <p class="specialP">Paragraph außerhalb von div</p>
+    <p>Paragraph 2 außerhalb von div</p>
+    <a name="anker">Verweis-Anker</a>
+
+
+    <script>
+        /* über ID */
+        document.getElementById("p1ID").textContent = "zugegriffen über getElById";
+        /* oder kurz: */
+        p1ID.textContent = "zugegriffen über autom. Var.";
+
+        /* über TagName */
+        document.getElementsByTagName("h3")[0].textContent = "zugegriffen über getElByTagName";
+        let paragraphs = [];
+        paragraphs = document.getElementsByTagName("p");
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].textContent = "zugegriffen über For-Loop " + i;
+
+        }
+        /* austesten */
+        /* paragraphs.map(el => {
+            el.textContent = "zugegriffen über map";
+            return 1;
+        }) */
+
+
+        /* über Name (attribut name="") */
+        document.getElementsByName("anker")[0].textContent = "zugegriffen über getElByName";
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Datentypen</title>
+</head>
+<body>
+
+    <h3>Casting</h3>
+    <h4>String to number</h4>
+    <p id="outp1"></p>
+
+    <p id="outp2"></p>
+
+
+    <h4>Number to string</h4>
+    <p id="outp3"></p>
+
+    <h3>Datentyp von Array</h3>
+    <p id="outp4"></p>
+
+    <script>
+        let myString = "4";
+        /* mit parseInt(zk, zahlensystem), RW - number */
+        let myNumber = parseInt(myString, 10);
+        //NaN
+        //let myNrBin = parseInt(myString, 2); //NaN
+        let myNrBin = parseInt('101', 2);
+
+        console.log(myNrBin);
+
+        outp1.textContent = "parseInt(myString, 10): " + myNumber + ", typeof myNumber: " + typeof myNumber + ", parseInt(myString, 2): " + myNrBin + ", typeof myNrBin: " + typeof myNrBin;
+        /* mit + Operator */
+        let myNumber1 = +myString;
+        outp2.textContent = typeof myNumber1;
+
+        let myString1 = myNumber.toString();
+        outp3.textContent = typeof myString1;
+
+        let myArr = [1, 3];
+        outp4.textContent = typeof myArr; //object
+
+        
+
+        //undefined
+        console.log("myArr[3]" + myArr[3]) //undefined
+
+
+    
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Objekte</title>
+</head>
+
+<body>
+    <p id="output">testtext</p>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+    <p id="output4"></p>
+    <p id="output5"></p>
+    <p id="output6"></p>
+    <script>
+        console.log(output);
+        /* anonyme Objekte */
+        let einMax = {
+            vorname: "Max",
+            nachname: "Mustermann",
+            getName: function () {
+                return this.vorname + " " + this.nachname;
+            }
+        }
+        output1.textContent = "einMax.getName: " + einMax.getName;
+        output2.textContent = "einMax.getName(): " + einMax.getName();
+        output3.textContent = "einMax['vorname']: " + einMax["vorname"];
+
+        /* Konstruktoren */
+        function Address(street, housenr) {
+            this.street = street;
+            this.housenr = housenr;
+            this.getAddress = function () {
+                return this.street + " " + this.housenr + " " + this.zipcode;
+            }
+            /* zipcode ist noch nicht im Objekt drin, kann trotzdem in der Methode verwenden werden */
+        }
+        let maxAddress = new Address("Hauptstraße", 5);
+        maxAddress.zipcode = 1550;
+        output4.textContent = "maxAddress.zipcode: " + maxAddress.zipcode;
+        einMax.address = maxAddress;
+
+        output5.textContent = "Adresse von Max: " + einMax.address.getAddress() + " " + einMax.address.zipcode;
+
+        /* Objekte beim Vergleichen - false */
+
+        /* Ob eine Variable Instanz von einem Objekt ist, kann man mit dem Operator instanceof abfragen */
+    </script>
+</body>
+
+</html>

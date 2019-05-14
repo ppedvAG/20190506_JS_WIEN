@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>jQ CSS Klassen anwenden</title>
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <!-- p{testtext in p}*3 -->
+    <p>testtext in p</p>
+    <p>testtext in p</p>
+    <p>testtext in p</p>
+
+    <script>
+    $(function(){
+        $('p').each(function(){
+            $(this).attr("contenteditable","true");
+        });
+        $('p').focus(function(){
+            $(this).addClass('bold');
+        });
+        $('p').mouseleave(function(){
+            $(this).removeClass('bold');
+        });
+    });
+    </script>
+    
+</body>
+</html>

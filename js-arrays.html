@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+    <p id="output4"></p>
+    <p id="output5"></p>
+    <p id="output6"></p>
+    
+    <script>
+        let numbers = [2, 4, 6, 7];
+        output1.textContent = "numbers.length: " + numbers.length;
+        numbers[2] = 10;
+        output2.textContent = "numbers: " + numbers;
+        output3.textContent = "typeof numbers: " + typeof numbers;
+        output4.textContent = "numbers[4]: " + numbers[4]; //undefined
+        /* let lastIndex = numbers.length - 1; */
+        output5.textContent = "index vom letzten El: " + (numbers.length - 1);
+        
+        for(let i = 0; i < numbers.length; i++) {
+            /* output6.textContent = output6.textContent + " " + numbers[i];
+            oder: */
+            setTimeout(function () {output6.textContent += ' ' + numbers[i];}, 1000*i);
+            
+        }
+        </script>
+</body>
+</html>

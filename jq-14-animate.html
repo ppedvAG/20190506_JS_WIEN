@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>jQ Effekte - animate()</title>
+    <style>
+        div {
+            border: medium solid;
+        }
+    </style>
+</head>
+<body>
+    <div>Klick zum Animieren</div>
+    
+    <script>
+        $(function(){
+            $('div').click(function(){
+                /* SYNTAX: animate({}, miliseconds, function) */
+                $(this).animate(
+                    {
+                        /* px sind default */
+                        width: '400',
+                        height: '300',
+                        'font-size': '50'
+                    },
+                    3000);
+                
+            })
+        })
+    
+    </script>
+</body>
+</html>

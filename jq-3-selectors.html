@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>jQ Selektoren</title>
+</head>
+
+<body>
+    <!-- div>h3{header}+p{paragraph $}*4 -->
+    <div>
+        <h3>header</h3>
+        <p>paragraph 1</p>
+        <p>paragraph 2</p>
+        <p>paragraph 3</p>
+        <p>paragraph 4</p>
+        <button>OK</button>
+        <input type="button" value="inp btn">
+
+    </div>
+
+    <script>
+        $(function () {
+            /* id-Selektor - siehe jq-1-basics.html */
+            /* class-Selektor  - siehe jq-1-basics.html*/
+            /* tag-Selektor  - siehe jq-1-basics.html*/
+            /* objekt-Selektor  - siehe jq-1-basics.html*/
+            
+            /* universalselektor */
+            //$('*').css('color', 'red');
+            /* JS: object.style.color = "red"; */
+
+            /* selector:contains(content) */
+            //$('p:contains(3)').css('color', 'red'); //zu beachten: argument ohne Anführungszeichen
+
+            /* this-Selektor */
+            //bei Verschachtelungen
+            /* $('p').click(function (){
+                $(this).css('font-size', '2em');
+            }); */
+            /* $(this).css('font-size', '2em'); */ //so hat es nicht funktioniert
+
+            /* selector:first */
+            //$('p:first').css('color', 'red');
+
+            /* pseudo-elemente */
+            // nicht in jQ
+            //$('p::first-letter').css('color', 'red');
+
+            /* pseudo-klassen */
+            // nicht in jQ
+            //$('p:hover').css('color', 'red');
+
+            /* type-Attribut selektor */
+            $(':button').css('color', 'red');
+        });
+    </script>
+</body>
+</html>

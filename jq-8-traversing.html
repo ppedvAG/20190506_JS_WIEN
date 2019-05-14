@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>jQ Traversing</title>
+    <style>
+        .container {
+            border: 2px solid;
+            padding: 50px;
+            margin-bottom: 20px;
+        }
+    div[id^="div"] {
+        padding: 10px;
+        border: thin solid grey;
+        margin-bottom: 10px;
+    }
+    </style>
+
+
+</head>
+<body>
+    <!-- div#div$${division $$}*12 -->
+
+    <div class="container">
+            <div id="div01">division 01</div>
+            <div id="div02">division 02</div>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <div id="div03">division 03</div>
+            <div id="div04">division 04</div>
+            <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="container">
+            <div id="div05">division 05</div>
+            <div id="div06">division 06</div>
+            <div id="div07">division 07</div>
+            <div id="div08">division 08</div>
+    </div>
+    <div class="container">
+            <div id="div09">division 09</div>
+            <div id="div10">division 10</div>
+            <div id="div11">division 11</div>
+            <div id="div12">division 12</div>
+    </div>
+    
+    
+    
+    
+    <script>
+        $(function(){
+            /* alle Geschwister von div03 */
+            //$('#div03').siblings().css('border', '2px solid red');
+
+            /* bestimmte Geschwister von div03 */
+            //$('#div03').siblings('p').css('border', '2px solid red');
+
+            /* Geschwister danach */
+            //$('#div06').nextAll().css('border', '2px solid red');
+
+            /* Geschwister danach bis ... */
+            $('#div09').nextUntil('#div12').css('border', '2px solid red');
+
+            /* .prev()
+            .prevAll()
+            .prevUntil()
+            .children()
+            .parent()
+            ... */
+
+        })
+    
+    </script>
+</body>
+</html>

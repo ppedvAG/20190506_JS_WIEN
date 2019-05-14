@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Map Objekt</title>
+</head>
+
+<body>
+    <h2>Beschreibung</h2>
+    <p>Maps sind Kollektionen aus key:value Paaren (wie dictionary in c#). Dabei können im Unterschied zu Objekten
+        sowohl keys als auch values verschiedene Datentypen haben.</p>
+    <h2>Beispiel</h2>
+    <p id="outp1"></p>
+    <p id="outp2"></p>
+    <p id="outp3"></p>
+    <p id="outp4"></p>
+
+
+
+    <script>
+
+        let myMap = new Map([[1,2],[3,4]]);
+        outp1.textContent = myMap; //[object Map]
+        console.log(myMap); //sieht gut aus, besser in Chrome
+        myMap.set("e", "i");
+        console.log(myMap); 
+        
+
+
+        outp2.textContent = myMap.size; //2
+        let myObj = {
+            key1: "value",
+            key2: 4
+        }
+
+        let myArray = [function () {alert("alert")}, function () {prompt("prompt")}];
+        myMap.set(myObj, myArray);
+        console.log(myMap);
+
+
+
+
+    </script>
+
+</body>
+
+</html>

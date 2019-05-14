@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Switch</title>
+</head>
+
+<body>
+    <p>Geben Sie einen Wochentag ein</p>
+    <input type="text" id="inp" oninput="check(this.value)">
+    <p id="output"></p>
+
+
+    <h3>Heute im Angebot:</h3>
+    <p id="outpToday"></p>
+    <script>
+
+
+        function check(inpValue) {
+            /* let inpValue = inp.value; */
+            switch (inpValue) {
+                case "Montag":
+                    output.textContent = "Heute im Angebot: Bratwürstle";
+                    break;
+                default:
+                    output.textContent = "Ihre Eingabe ist unklar";
+            }
+        }
+
+        let date = new Date();
+        let weekDay = date.getDay();
+        switch (weekDay) {
+            case 1:
+                outpToday.textContent = "Bratwürstle";
+                break;
+            case 2:
+                outpToday.textContent = "Pizza";
+                break;
+            case 3:
+                outpToday.textContent = "Salat";
+                break;
+            case 4:
+                outpToday.textContent = "Maultaschen";
+                break;
+            case 5:
+                outpToday.textContent = "Schnitzel";
+                break;
+            case 6:
+                outpToday.textContent = "Fisch";
+                break;
+            case 0:
+                outpToday.textContent = "Pilzpfanne";
+                break;
+            default:
+                output.textContent = "Ihre Eingabe ist unklar";
+        }
+
+    </script>
+
+</body>
+
+</html>

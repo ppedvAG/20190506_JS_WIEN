@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS String Objekt</title>
+</head>
+<body>
+    <!-- (h3{Methode $}+p#outp$)*9 -->
+    <h3>Methode 1</h3>
+    <p id="outp1"></p>
+    <h3>Methode 2</h3>
+    <p id="outp2"></p>
+    <h3>Methode 3</h3>
+    <p id="outp3"></p>
+    <h3>Methode 4</h3>
+    <p id="outp4"></p>
+    <h3>Methode 5</h3>
+    <p id="outp5"></p>
+    <h3>Methode 6</h3>
+    <p id="outp6"></p>
+    <h3>Methode 7</h3>
+    <p id="outp7"></p>
+    <h3>Methode 8</h3>
+    <p id="outp8"></p>
+    <h3>Methode 9</h3>
+    <p id="outp9"></p>
+
+    <input type="text" id="inp1">
+    <input type="text" id="inp2">
+    <p id="outpPW"></p>
+    <button onclick="submitPW()">OK</button>
+
+
+
+    <script>
+        let myString = 'text', myString2 = "text2";
+        let myString3 = new String("Eine Zeichenkette zum Austesten");
+        console.log(typeof myString3);
+
+        //1. charAt(index: number)
+        outp1.textContent = "an der Stelle 8 steht ein: " + myString3.charAt(8); //c
+        //2. indexOf(char: string) ist case sensitive
+        outp2.textContent = ": " + myString3.indexOf("r");
+        //3. lastIndexOf(char: string)
+        outp3.textContent = ": " + myString3.lastIndexOf("r");
+        //4. slice(index:number, index:number)
+        outp4.textContent = ": " + myString3.slice();
+        //5. substr(index:number, anzahl_von_char: number)
+        outp5.textContent = ": " + myString3.substr();
+        //6. split('')
+        outp6.textContent = ": " + myString3.split('');        
+        //7. toLowerCase()
+        outp7.textContent = ": " + myString3.toLowerCase();
+        //8. toUpperCase()
+        outp8.textContent = ": " + myString3.toUpperCase();
+        //9. concat(zk: string)
+        outp9.textContent = "was macht die Funktion: " + myString3.concat('zusatz');
+    
+        function submitPW() {
+            console.log("bin in submitPW fct");
+            //let strInp1 = new String(inp1.value); //falsch, weil Objekte beim Vergleichen liefern immer false
+            let strInp1 = inp1.value; //richtig
+            //console.log("strInp1: " + strInp1);
+            //let strInp2 = new String(inp2.value); //falsch
+            let strInp2 =inp2.value; //richtig
+            if (strInp1 == strInp2){ 
+                outpPW.textContent = "das neue PW akz.";
+            } else {
+                outpPW.textContent = "Eingaben stimmen nicht überein";
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

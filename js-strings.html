@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Zeichenketten</title>
+</head>
+<body>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+    <p id="output4"></p>
+    <p id="output5"></p>
+    <p id="output6"></p>
+
+
+    <script>
+        let text1 = "irgendwas";
+        let text2 = "noch was";
+        let result = text1 + text2;
+        output1.textContent = "result: " + result;
+        
+        let number1 = 2;
+        result = number1 + text1;
+        output2.textContent = "number1 + text1: " + result;
+        output3.textContent = "typeof number1+text1: " + typeof result;
+        
+        let text3 = 'text3';
+        output4.textContent = "text1+text3: " + text1 + text3;
+        
+        /* template strings */
+        output5.textContent = `template strings mit variablen drin ${number1}`;
+        
+        output6.textContent = "text1.length: " + text1.length;
+
+
+        </script>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Date Objekt</title>
+</head>
+<body>
+    <h3>1. Methode</h3>
+    <p id="outp1"></p>
+    <h3>2. Methode</h3>
+    <p id="outp2"></p>
+    <h3>3. Methode</h3>
+    <p id="outp3"></p>
+    <h3>4. Methode</h3>
+    <p id="outp4"></p>
+    <h3>5. Methode</h3>
+    <p id="outp5"></p>
+    <h3>6. Methode</h3>
+    <p id="outp6"></p>
+    <h3>7. Methode</h3>
+    <p id="outp7"></p>
+
+    <h2>Übung Digitale Uhr</h2>
+    <p id="digClock"></p>
+
+    <h2>Übung 2</h2>
+    <p>siehe js-switch.html</p>
+
+    <script>
+
+        let myDate = new Date();
+        outp1.textContent = "myDate: " + myDate;
+        outp2.textContent = "myDate instanceof Date: " + (myDate instanceof Date);//true
+        //getDate()
+        outp3.textContent = "myDate: " + myDate.getDate();
+        //getDay()
+        //RW: 0 - 6, 0 für Sonntag
+        outp4.textContent = "myDate: " + myDate.getDay();
+        //getTime()
+        //RW: Millisekunden seit 01.01.1970
+        outp5.textContent = "myDate: " + myDate.getTime();
+        //getFullYear()
+        outp6.textContent = "myDate: " + myDate.getFullYear();
+        //getMonth
+        //RW: 0 - 11
+        outp7.textContent = "myDate.getMonth(): " + myDate.getMonth();
+
+        function tick() {
+            let d = new Date();
+            /* d = d.toTimeString();
+            d = d.slice(0, 8); */
+            /* oder: */
+            d = d.toLocaleTimeString();
+
+            digClock.textContent = d;
+        }
+        setInterval("tick()", 1000);
+
+
+    
+    </script>
+    
+</body>
+</html>

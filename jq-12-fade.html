@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>jQ Effekte - Fade</title>
+    <style>
+        /* mit display:flex werden Kinder vom Container zu inline-block-Elementen. */
+    #container {
+        display: flex;
+        flex-direction: column; /* default: row */
+    }
+    div div {
+        width: 200px;
+        height: 200px;
+        background-color:midnightblue;
+        margin: 50px;
+    }
+    </style>
+</head>
+<body>
+    <!-- div#container>div#div$*4 -->
+    <button>FADE</button>
+    <div id="container">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+    </div>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                $('#div1').fadeToggle(2000); //display:none - Platz wird freigegeben
+                //SYNTAX: fadeTo(miliseconds / schlüsselwort, opacite);
+                $('#div2').fadeTo(800, .2);
+                $('#div3').fadeTo(600, 0.5);
+                $('#div4').fadeTo('slow', 0.7);
+            })
+        })
+    
+    </script>
+</body>
+</html>

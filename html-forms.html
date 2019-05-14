@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML Formulare</title>
+    <style>
+        label {
+            display: inline-block;
+            min-width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- action="checkForm.php" -->
+    <form action="#">
+        <!-- (div>label+input)*16 -->
+        <p>durch for="" bei label und id="" bei input wird input auch durch Klicken auf label fokusiert</p>
+
+        <h3>fieldset zum Gruppieren von Inputs</h3>
+        <fieldset>
+            <legend>NAME</legend>
+            <div><label for="firstname">VORNAME</label><input type="text" name="firstname" placeholder="Max">
+            </div>
+            <div><label for="lastname">NACHNAME</label><input type="text" name="lastname" placeholder="Mustermann">
+            </div>
+        </fieldset>
+
+        <h3>RegExp als Pattern bei Inputs</h3>
+        <div><label for="telNr">TEL</label><input type="text" name="telNr" pattern="\+43\d{9,11}"
+                title="mit +43 und folgenden 9 oder 11 Ziffern" oninput="checkTel(this)"></div>
+        <p id="outpTel"></p>
+        <!-- beim Benennen der Funktionen darauf achten, dass es bestimmte Funktionen schon existieren. Z.B. checkValidity() -->
+        <hr> <!-- horizontal ruler -->
+
+        <h3>min max & try catch</h3>
+        <h3>Marathonanmeldung</h3>
+        <div>
+            <label for="age"></label>
+            <input type="number" id="inpAge" name="age" min="1" max="113">
+            <button type="button" onclick="trycatch()">OK</button>
+            <p id="outpAge"></p>
+        </div>
+        <hr>
+        <h3>input type color</h3>
+        <div><label for="inpColor"></label><input type="color" name="inpColor"></div>
+        <hr>
+        <h3>input type date</h3>
+        <div><label for="inpDate"></label><input type="date" name="inpDate"></div>
+        <hr>
+        <h3>input type radio / radio box</h3>
+        <p>über das Attr name mit dem gleichen Wert sind die inputs verbunden</p>
+        <div><label for="inpRadio1">Herr</label><input id="inpRadio1" type="radio" name="inpRadio"></div>
+        <div><label for="inpRadio2">Frau</label><input id="inpRadio2" type="radio" name="inpRadio"></div>
+        <hr>
+
+        <h3>input type checkbox</h3>
+        <h4>Extras extras:</h4>
+        <div><label for="cheese">Käse</label><input id="cheese" type="checkbox" name="inpCB"></div>
+        <div><label for="salami">Salami</label><input id="salami" type="checkbox" name="inpCB"></div>
+        <div><label for="pineapple">Ananas</label><input id="pineapple" type="checkbox" name="inpCB"></div>
+        <div><label for="mushrooms">Pilze</label><input id="mushrooms" type="checkbox" name="inpCB"></div>
+        <button type="button" onclick="checkExtras()">OK</button>
+        <p id="outpExtras"></p>
+        <hr>
+
+        <h3>input type range</h3>
+        <h4>Hotelzimmerpreis</h4>
+        <div><label for="inpRange">Hotelpreis</label><input type="range" id="inpRange" value="70" min="20" max="200" step="5" oninput="showPrice()"></div>
+        <p id="outpPrice"></p>
+        <hr>
+
+        <div><label for=""></label><input type="text"></div>
+        <div><label for=""></label><input type="text"></div>
+        <div><label for=""></label><input type="text"></div>
+
+
+
+    </form>
+
+    <script>
+        function checkTel(inpTelNr) {
+            outpTel.textContent = inpTelNr.validity.valid + " " + inpTelNr.validationMessage;
+
+        }
+        /* validationMessage in Chrome:  Ihre Eingabe muss mit dem geforderten Format übereinstimmen. */
+        /* validationMessage in FF: Bitte halten Sie sich an das vorgegebene Format: mit +43 und folgenden 9 oder 11 Ziffern. */
+
+        function trycatch() {
+            let inpValue = inpAge.value;
+
+            /* SYNTAX: try { if () throw ""} catch (err) { } finally { } */
+            let err;
+            try {
+                if (inpValue < 0) throw "kleiner als min";
+                if (inpValue > 0 && inpValue <= 5) throw "Zur Teilnahme noch nicht berechtigt";
+
+                /*  if(inpValue 5-14) throw "";
+                 if(inpValue 14-50) throw "";
+                 if(inpValue 50-65) throw "";
+                 if(inpValue 65) throw ""; */
+                if (inpValue > 113) throw "Größer als max";
+                if (!isNaN(inpValue)) throw "keine Zahl"; //für Chrome mit Zeichen e
+
+            } catch (err) {
+                outpAge.textContent = "Meldung von err: " + err;
+                this.err = err;
+            } finally {
+                /* in finally wird immer reingegangen */
+                if (this.err) {
+                    inpAge.value = "";
+                }
+
+                if (this.err == "") {
+                    setTimeout('outpAge.textContent = "Willkommen bei Marathon";', 2000);
+                }
+                this.err = "";
+            }
+            inpAge.value = "";
+        }
+
+        function checkExtras() {
+            let checkBArray = document.getElementsByName("inpCB"); //keine vordefinierte Methode
+            for (let el of checkBArray) {
+                outpExtras.innerHTML += "input " + el.id + " is checked? " + el.checked + "<br>";
+            }
+            /* let inpValue = ???
+            .textContent = inpValue; */
+        }
+
+        function showPrice() {
+            outpPrice.textContent = "der ausgewählte Preis: " + inpRange.value + ", min: " + inpRange.min + ", max: " + inpRange.max;
+        }
+        showPrice();
+    </script>
+
+</body>
+
+</html>

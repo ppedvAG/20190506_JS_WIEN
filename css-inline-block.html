@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS inline & block Elemente</title>
+    <style>
+        /* 2. */
+        * {
+            border: thin solid grey;
+            margin: 5px; /* ist shorthand für margin-top,-right,-bottom,-left */
+            padding: 5px;
+        }
+        /* Hinweis: body hat per default margin 8px */
+
+
+        /* 3. */
+        /* * {
+            width: 50%;
+            height: 100px;
+        } */
+        /* 4. */
+        span {
+            display: block;
+        }
+
+        /* 5. */
+        div {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        }
+
+        /* Hinweis */
+        /* über display: none; & visibility: hidden; kann man Elemente unsichtbar machen*/
+    </style>
+</head>
+
+<body>
+
+    <h1>Header</h1>
+
+    <p>Paragraph</p>
+    <a href="#">Link-Anker</a>
+    <a href="#">Link-Anker</a>
+
+    <img src="http:picsum.photos/200/?random" alt="">
+    <img src="http:picsum.photos/200/?random" alt="">
+    <img src="http:picsum.photos/200/?random" alt="">
+
+    <span>span</span>
+
+    <div>division</div>
+    <div>division</div>
+    <div>division</div>
+
+    <!--  in solcher Form ist der Rahmen von table in FF nicht sichtbar, in Chrome schon. -->
+    <!-- <table>table</table> -->
+    <h1>Bemerkungen</h1>
+    <h2>1. neue / dieselbe Zeile</h2>
+    <p>block-E - neue Zeile, sind so breit, wie möglich (100% vom Elternelement)<br>
+        inline-E - dieselbe Zeile, sind so breit, wie nötig</p>
+
+    <h2>2. box-modell</h2>
+    <p>sowohl an inline- als auch block-E kann man das CSS-Box-Modell anwenden</p>
+    <p>aber margin bei inline-E hat eine Wirkung nur links und rechts</p>
+
+    <h2>3. Maßangaben</h2>
+    <p>block-E - akzeptieren width & height
+        <br>
+        inline-E - ignorieren width & height
+    </p>
+
+    <h2>4. das Verhalten ändern</h2>
+    <p>über die Eigenschaft display kann man block- & inline-Verhalten ändern</p>
+
+    <h2>5. inline-block</h2>
+    <p>über display:inline-block kann man Vorteile von beiden Verhalten kombinieren
+        <br>
+        d.h. mehrere Elemente in gleicher Zeile und Maßangaben
+    </p>
+
+
+</body>
+
+</html>

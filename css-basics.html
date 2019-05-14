@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Grundlagen</title>
+    <style>
+        /* Universalselektor */
+        /* selektiert alle Elemente, auch body und html */
+/*         * {
+            color:red;
+        } */
+
+        /* Typselektor */
+        /* h3 {
+            color:red;
+        } */
+        /* p {
+            color:red;
+        } */
+
+        /* ID-Selektor */
+        /* #p1ID {
+            color:red;
+        } */
+
+        /* Class-Selektor */
+        /* .specialP {
+            color:red;
+        } */
+
+        /* KOMBINATOREN */
+        /* Auflistung */
+        /* h3, #p1ID {
+            color:red;
+        } */
+
+        /* Geschwister-Selektor */
+        /* h3 + p {
+            color:red;
+        } */
+
+        /* Eltern-Kind-Selektor */
+        /* div p {
+            color:red;
+        } */
+        /* div > p {
+            color:red;
+        } */
+        /* KOMBINATOREN-ENDE */
+
+        /* Attribut-Selektor */
+        /* eckige Klammern */
+        /* *[onclick] {
+            color:red;
+        } */
+
+        /* PSEUDO SELEKTOREN */
+        /* Pseudo Elemente */
+        /* p::first-letter {
+            color:red;
+        } */
+
+        /* Pseudo Klassen */
+        /* p:hover {
+            color:red;
+        } */
+        /* PSEUDO SELEKTOREN - END */
+
+        /* not-Selektor */
+        /* p:not(#p1ID) {
+            color:red;
+        } */
+
+        /* nth-Selektoren */
+        /* p:nth-child(2) {
+            color:red;
+        } */
+        /* Syntax - nth-of-type(an + b) */
+        /* p:nth-of-type(2n + 0) ODER: */
+        p:nth-of-type(even) {
+            color:red;
+        }
+
+        div {
+            border: 2px solid blue;
+            /* border-width: 2px;
+            border-style: solid;
+            border-color: blue; */
+        }
+
+
+
+
+
+
+
+    
+    </style>
+</head>
+<body>
+    text in body
+
+    <div>
+        <h3>Header </h3>
+        <p id="p1ID">Paragraph 1</p>
+        <p onclick="myFunction()">Paragraph 2</p>
+        <p class="specialP">Paragraph 3</p>
+        <p onclick="myFunction()">Paragraph 4</p>        
+    </div>
+    <a href="#">Link nach nirgendwo</a>
+    <p class="specialP">Paragraph außerhalb von div</p>
+    <p>Paragraph 2 außerhalb von div</p>
+
+    <!-- <script>
+        p1ID.style.color = "red";
+    
+    </script> -->
+    
+</body>
+text in html
+
+</html>

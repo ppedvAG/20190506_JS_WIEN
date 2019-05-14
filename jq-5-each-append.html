@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: thin solid;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- genommen aus html-tables.html -->
+    <!-- table>caption{table caption}+(thead>tr>th{theadcell $}*4)+(tbody>(tr>td{table data $$}*4)*4)+(tfoot>tr>td{tfoot cell $}*4) -->
+    <table>
+        <caption>table caption</caption>
+        <thead>
+            <tr>
+                <th>theadcell 1</th>
+                <th>theadcell 2</th>
+                <th>theadcell 3</th>
+                <th>theadcell 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>table data 01</td>
+                <td>table data 02</td>
+                <td>table data 03</td>
+                <td>table data 04</td>
+            </tr>
+            <tr>
+                <td>table data 01</td>
+                <td>table data 02</td>
+                <td>table data 03</td>
+                <td>table data 04</td>
+            </tr>
+            <tr>
+                <td>table data 01</td>
+                <td>table data 02</td>
+                <td>table data 03</td>
+                <td>table data 04</td>
+            </tr>
+            <tr>
+                <td>table data 01</td>
+                <td>table data 02</td>
+                <td>table data 03</td>
+                <td>table data 04</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>tfoot cell 1</td>
+                <td>tfoot cell 2</td>
+                <td>tfoot cell 3</td>
+                <td>tfoot cell 4</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        $(function(){
+            let rowCount = $('tbody tr').length;
+            //console.log(rowCount);
+            let headerCells = $('th');
+            headerCells.each(function(index){
+                /* append fügt Inhalt zum existierenden Inhalt zu */
+                //$(this).append("testtext" + index);
+                /* wenn Ersetzen gewünscht, dann erstmal leeren */
+                $(this).empty();
+                $(this).append("header text" + index);
+            });
+            /* erste Zelle in jeder Reihe selektieren */
+            let col1 = $('tbody tr td:first-child');
+            col1.each(function(){
+                $(this).append('column 1 text');
+            })
+        });
+    
+    </script>
+
+</body>
+
+</html>

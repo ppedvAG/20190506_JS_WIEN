@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>jQ Selektion filtern</title>
+</head>
+<body>
+    <h3>Autosuche</h3>
+    <!-- input#inpSearch+ul#ulId>li*3 -->
+    <input type="text" id="inpSearch">
+    <ul id="ulId">
+        <li>Mazda</li>
+        <li>Porsche</li>
+        <li>Jaguar</li>
+    </ul>
+    
+    <script>
+        $(function(){
+            $('#inpSearch').keyup(function(){
+                let inpVal = $(this).val();
+                $('li').filter(function(){
+                    $(this).toggle(
+                        $(this).text().indexOf(inpVal) > -1
+                    )
+                })
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS window object</title>
+</head>
+<body>
+
+    <!-- (h3{$. Methode / Eigenschaft}+button[onclick=""]{demonstrate})*5 -->
+    <h3>1. Methode alert()</h3>
+    <button onclick="alert('Methode alert() ist hier')">demonstrate</button>
+    <h3>2. Methode prompt()</h3>
+    <button onclick="demonstratePrompt()">demonstrate</button>
+    <p id="outp2"></p>
+    <h3>3. Methode confirm</h3>
+    <button onclick="demonstrateConfirm()">demonstrate</button>
+    <p id="outp3"></p>
+    <h3>4. Methode setTimeout()</h3>
+    <button onclick="setTimeout('confirm(`dieses Popup wurde um 2 sek verzögert`)',2000)">demonstrate</button>
+    <h3>5. Methode setInterval() & clearInterval()</h3>
+    <button onclick="demonstrateSetInterval()">demonstrate</button>
+    <button onclick="clearInterval(intervalID)">stop it</button>
+    <h3>6. Methoden open(), focus(), blur(), close()</h3>
+    <!-- button[onclick="window()"]{ppedv}*4 -->
+    <button onclick="windowOpen()">Open ppedv</button>
+    <button onclick="windowFocus()">Focus ppedv</button>
+    <button onclick="windowBlur()">Blur ppedv</button>
+    <button onclick="windowClose()">Close ppedv</button>    
+
+    <script>
+        function demonstratePrompt() {
+            let jahre = prompt("Geben Sie Ihr Alter an:");
+            outp2.textContent = "eingegeben: " + jahre;
+        }
+        function demonstrateConfirm(){
+            let conf = confirm("Drücke auf OK");
+            outp3.textContent = "RW von confirm(): " + conf; //true, wenn OK, false wenn Abbrechen
+
+        }
+        function demonstrateSetInterval() {
+            intervalID = setInterval('confirm("ich erscheine alle 3 sek");',3000);
+        }
+
+        let myWindow;
+        function windowOpen(){
+            myWindow = window.open(
+                "https://ppedv.de",
+                "_blank",
+                "width=400, height=450"
+            )
+        }
+        
+        /* edge hat die größenangaben ignoriert */
+        function windowClose(){
+            myWindow.close();            
+        }
+        //close()
+
+        function windowBlur() {
+            myWindow.blur();
+        }
+
+        function windowFocus(){
+            myWindow.focus();
+        }
+    
+    </script>
+    
+</body>
+</html>

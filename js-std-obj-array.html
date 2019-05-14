@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Array Objekt</title>
+</head>
+<body>
+
+    <!-- (h3{Methode $}+p#outpFct$+p#outpArr$)*10 -->
+    <h3>Methode 1</h3>
+    <p id="outpFct1"></p>
+    <p id="outpArr1"></p>
+    <h3>Methode 2</h3>
+    <p id="outpFct2"></p>
+    <p id="outpArr2"></p>
+    <h3>Methode 3</h3>
+    <p id="outpFct3"></p>
+    <p id="outpArr3"></p>
+    <h3>Methode 4</h3>
+    <p id="outpFct4"></p>
+    <p id="outpArr4"></p>
+    <h3>Methode 5</h3>
+    <p id="outpFct5"></p>
+    <p id="outpArr5"></p>
+    <h3>Methode 6</h3>
+    <p id="outpFct6"></p>
+    <p id="outpArr6"></p>
+    <h3>Methode 7</h3>
+    <p id="outpFct7"></p>
+    <p id="outpArr7"></p>
+    <h3>Methode 8</h3>
+    <p id="outpFct8"></p>
+    <p id="outpArr8"></p>
+    <h3>Methode 9</h3>
+    <p id="outpFct9"></p>
+    <p id="outpArr9"></p>
+    <h3>Methode 10</h3>
+    <p id="outpFct10"></p>
+    <p id="outpArr10"></p>
+    
+
+
+    <script>
+
+        let cities1 = new Array(4);
+        cities1[0] = 'Wien';
+        cities1[1] = 'Linz';
+        cities1[2] = 'Salzburg';
+        cities1[3] = 'Sankt-Pölten';
+
+        let cities2 = new Array("Innsbruck", "Graz", "Bregenz", "Eisenstadt", "Klagenfurt");
+        
+
+        //1. concat(array)
+        outpFct1.textContent = "Rückgabe von concat: " + cities1.concat(cities2);
+        outpArr1.textContent = "Array mit Änderung: " + cities1;
+        //2. toString()
+        outpFct2.textContent = "Rückgabe von toString: " + cities1.toString();
+        outpArr2.textContent = "Array mit Änderung: " + cities1;
+        //3. join(string) z.B. join('+')
+        //fügt die angegebene ZK zwischen den Elementen ein als RW
+        //das Array bleibt aber unverändert
+        outpFct3.textContent = "Rückgabe von join: " + cities1.join('+');
+        outpArr3.textContent = "Array mit Änderung: " + cities1;
+        //4. indexOf(arrayElement: datentyp_wie_in_array)
+        outpFct4.textContent = "Rückgabe von indexOf: " + cities1.indexOf('Graz');
+        outpArr4.textContent = "Array mit Änderung: " + cities1;
+        //5. unshift(neues_arrayEl)
+        outpFct5.textContent = "Rückgabe von unshift: " + cities1.unshift("newEl");
+        outpArr5.textContent = "Array mit Änderung: " + cities1;
+        //6. shift() ohne und mit Argument shift(arrayEl)
+        outpFct6.textContent = "Rückgabe von shift: " + cities1.shift();
+        outpArr6.textContent = "Array mit Änderung: " + cities1;
+        //7. push(neues_arrayEl)
+        outpFct7.textContent = "Rückgabe von push: " + cities1.push("Innsbruck");
+        outpArr7.textContent = "Array mit Änderung: " + cities1;
+        //8. pop() ohne und mit Argument pop(arrayEl)
+        outpFct8.textContent = "Rückgabe von pop: " + cities1.pop();
+        outpArr8.textContent = "Array mit Änderung: " + cities1;
+        //9. splice(wo_hinzufügen:number, wie_viele_löschen:number, neues_arrayEl)
+        outpFct9.textContent = "Rückgabe von splice: " + cities1.splice(2, 1, "Minsk");
+        outpArr9.textContent = "Array mit Änderung: " + cities1;
+        //10. reverse() ohne Argument
+        outpFct10.textContent = "Rückgabe von reverse: " + cities1.reverse();
+        outpArr10.textContent = "Array mit Änderung: " + cities1;
+        
+    
+    </script>
+    
+    
+</body>
+</html>

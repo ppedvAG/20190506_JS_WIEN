@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Var & Let</title>
+</head>
+<body>
+
+    <script>
+        /* deklarieren */
+        var v;
+        let l;
+
+        /* initialisieren */
+        v = 4;
+        l = 5;
+
+        /* redeklarieren */
+        var v = 6;
+        // let l = 7; //wirft Fehler auf
+        // var l = 7; // dasselbe
+
+        console.log("v: " + v);
+        console.log("v gehört zu window. window.v: " + window.v);
+        console.log("l: " + l);
+        console.log("l gehört NICHT zu window. window.l: " + window.l);
+
+        /* Scope von var */
+        var a = 2;
+        {
+            a = 3;
+            console.log("a in Klammern: " + a);
+        }
+        console.log("a nach den Klammern: " + a);
+
+        /* Scope von let */
+        let b = 4;
+        {
+            b = 6;
+            console.log("let b in Klammern: " + b);
+        }
+        console.log("let b nach den Klammern: " + b);
+
+        /* Scope von let */
+        let c = 4;
+        {
+            let c = 6;
+            console.log("let c in Klammern: " + c);
+        }
+        console.log("let c nach den Klammern: " + c);
+
+    
+    </script>
+    
+</body>
+</html>

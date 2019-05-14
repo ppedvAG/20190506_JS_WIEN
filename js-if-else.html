@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>If Else Anweisung</title>
+    <style>
+    p {
+        width: 100px;
+        height: 100px;
+        border: medium dotted darkred;
+        
+    }
+    </style>
+</head>
+
+<body>
+    <p id="output" onmouseenter="mousehome = true; check()" onmouseleave="mousehome = false; check()"></p>
+    <!-- oder onmouseout -->
+    <script>
+
+        let mousehome;
+        console.log(output);
+        function check() {
+            if (mousehome == true) {
+                output.style.backgroundColor = "yellow";
+                output.textContent = "Maus ist da";
+            } else {
+                output.style.backgroundColor = "lightgrey";
+                output.textContent = "Maus ist weg";
+            }
+
+        }
+        
+        
+        
+    
+    </script>
+
+    
+</body>
+</html>

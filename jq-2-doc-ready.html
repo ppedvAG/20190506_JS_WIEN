@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    <title>Doc ready win load</title>
+</head>
+
+<body>
+    <iframe src="https://jquery.com" frameborder="0"></iframe>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        /* 3. nachdem zusätzliche URL geladen sind */
+        $(window).on("load", function () {
+            alert("window loaded");
+        });
+    </script>
+    <script>
+        /* 2. nachdem DOM angelegt wurde*/
+        $(document).ready(function () {
+            alert("document ready");
+        });
+    </script>
+    <script>
+        /* 1. */
+        alert("script ausgelesen");
+    </script>
+
+
+
+
+</body>
+
+</html>

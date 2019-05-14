@@ -1,0 +1,8 @@
+TUTORIALS & REFERENZEN einsteiger
+https://www.w3schools.com/
+
+REFERENZEN & TUTORIALS official 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+EXAMPLES & ONLINE HTML-CSS-JS-EDITOR & MORE 
+https://codepen.io/ 

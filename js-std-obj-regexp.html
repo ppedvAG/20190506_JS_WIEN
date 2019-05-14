@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS RegExp Objekt</title>
+</head>
+<body>
+
+    <!-- p#outp$*4 -->
+    <h2>Grundlagen</h2>
+    <p id="outp1"></p>
+
+    <h2>Aller Treffer ausgeben</h2>
+    <p id="outp2"></p>
+
+    <h2>String.replace(RegExp)</h2>
+    <p id="outp3"></p>
+
+    String.search(RegExp)
+    <p id="outp4"></p>
+
+    <script>
+        /* Grundlagen */
+        let reg = new RegExp("a+");
+        let reg1 = /a+/gi;
+        /* let reg1 = /[a+]/gi; */
+        /* mit der Variante oben werden alle Treffer im nächsten Beispiel in neuer Zeile angezeigt */
+        /* let reg1 = /a[ln]/gi; */
+        let text = "Hallo an alle Teilnehmer in Aachen";
+        /* RegExp.test(string) - RW: true / false */
+        if (reg1.test(text)) {
+            outp1.textContent = "ein a/A wurde gefunden";
+        } else {
+            outp1.textContent = "kein Resultat";
+        }
+
+        /* Aller Treffer ausgeben */
+        let results = [];
+        results = reg1.exec(text);
+        while(results) {
+            outp2.innerHTML += results[0] + "<br>";
+            results = reg1.exec(text);
+        }
+        /* Warum nur ein El im Array? Warum neu ausführen? */
+        console.log(results);
+
+        /* String.replace(RegExp) */
+        let reg3 = /(\w+)\s(\w+)/;
+        let text3 = "Max Mustermann";
+        outp3.textContent = text3.replace(reg3, "$2, $1");
+        /* ZK bleibt wie sie war */
+
+        /* String.search(RegExp) */
+        let reg4 = /ppedv/i;
+        let text4 = "Wir sind bei Ppedv zu Besuch. Heute verlässt Dietmar ppedv";
+        let rwSearch = text4.search(reg4);
+        /* RW: Index vom ersten Treffer */
+        outp4.textContent = rwSearch;
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

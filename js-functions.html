@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Funktionen</title>
+</head>
+<body>
+    <div>
+        <input id="inp" type="text">
+        <h3>Property textContent</h3>
+        <p id="output1"></p>
+        <h3>Property innerHTML</h3>
+        <p id="output2"></p>
+        <p id="output3"></p>
+
+        <button onclick="myFunction()">OK</button>
+        <button onclick="myFunction1(inp.value)">OKmitARG</button>
+        <button onclick="myFktForReturn()">OKmitReturn</button>
+        <button onclick="makeBig()">toUpper</button>
+        <button onclick="showFirst()">showFirstChar</button>
+
+
+
+    </div>
+
+    <script>
+        /* eine Funktion ohne Argumente und ohne Rückgabewert */
+        function myFunction() {
+            output1.textContent = "<h1>" + inp.value + "</h1>";
+            output2.innerHTML = "<h1>" + inp.value + "</h1>";
+        }
+        // Fkt ohne RW
+        //output3.textContent = myFunction(); //wird nichts angezeigt, die Fkt wird auber ausgeführt
+
+        /* eine Fkt mit Argument */
+        function myFunction1(etwas) {
+            output1.textContent = etwas;
+            output2.innerHTML = "<h1>" + etwas + "</h1>";
+        }
+
+        /* eine Fkt ohne Arg mit RW */
+        function myFunction2() {
+            return inp.value;            
+        }
+        function myFktForReturn () {
+            output1.textContent = myFunction2();
+        }
+        
+        /* eine Fkt mit Arg und RW */
+        function myFunction3(etw) {
+            return etw.toUpperCase();
+        }
+        function makeBig() {
+            output1.textContent = myFunction3(inp.value);
+        }
+        
+        function showFirst() {
+            /* anonyme Fkt function(){}*/
+            setTimeout (function () {output1.textContent = inp.value.substr(0, 1)}, 2000);
+
+        }
+        
+
+
+
+
+
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,7 @@
+alt shift a - kommentare
+alt b - open in default browser
+alt shift b - open in browser 
+shift alt f - format doc
+strg f5 - cache vom Browser refreshen
+strg # - einzeiliges Kommentar
+strg leertaste - intellisence / emmet erscheinen lassen

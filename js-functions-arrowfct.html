@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Pfeilfunktion</title>
+</head>
+<body>
+
+    <p id="outp1"></p>
+    <p id="outp2"></p>
+    <p id="outp3"></p>
+    <p id="outp4"></p>
+    <p id="outp5"></p>
+    <p id="outp6"></p>
+
+    <script>
+
+        let elements = ["Kupfer", "Eisen", "Magnesium", "Brom"];
+        let results = [];
+
+        /* anonyme Fkt */
+        results = elements.map(function(el){
+            return el.length;
+        })
+        outp1.textContent = "1. " + results;
+
+        /* arrow function */
+        /* ohne Schlüsselwort function, mit => */
+        results = elements.map((el) => {
+            return el.length;
+        })
+        outp2.textContent = "2. " + results;
+
+        /* wenn nur eine Anweisung, die mit return, dann ohne Schlüsselwort return */
+        results = elements.map((el) => el.length)
+        outp3.textContent = "3. " + results;
+        
+        /* wenn es nur Argument ist, runde Klammern optional */
+        /* ohne Argumente, runde Klammern obligatorisch */
+        results = elements.map(el => el.length)
+        outp4.textContent = "4. " + results;
+
+        /* interpolation */
+        results = elements.map(({length: eineVar}) => eineVar)
+        outp5.textContent = "5. " + results;
+
+        /* interpolation kürzer */
+        results = elements.map(({length}) => length)
+        outp6.textContent = "6. " + results;
+
+
+
+
+        </script>
+    
+</body>
+</html>
